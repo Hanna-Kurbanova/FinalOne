@@ -71,8 +71,10 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  let apiKey = "c8735bb7e8e2f8d8a38c7501f3cd47d3";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiKey = "8e897a0b4f39e7afb5t2d18f809912o8";
+  //"c8735bb7e8e2f8d8a38c7501f3cd47d3";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon={lon}&lat={lat}&key={key}`;
+  //`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -103,8 +105,10 @@ function displayTemperature(response) {
 }
 
 function search(city) {
-  let apiKey = "77df4efc31ae8b0acc6c7d09570dde67";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=77df4efc31ae8b0acc6c7d09570dde67&units=metric`;
+  let apiKey = "8e897a0b4f39e7afb5t2d18f809912o8";
+  //"77df4efc31ae8b0acc6c7d09570dde67";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?q=${city}&appid=8e897a0b4f39e7afb5t2d18f809912o8&units=metric`;
+  //`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=77df4efc31ae8b0acc6c7d09570dde67&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -117,4 +121,4 @@ function handleSubmit(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-search("Kyiv");
+search("Lisbon");

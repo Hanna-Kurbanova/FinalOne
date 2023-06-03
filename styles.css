@@ -1,11 +1,12 @@
 body {
   font-size: arial, sans-serif;
+  background-color: #f7e3f7;
 }
 
 h1 {
-  color: #fe1e78;
-  font-size: 24px;
-  font-weight: 100;
+  color: rgb(130, 20, 119);
+  font-size: 30px;
+  font-weight: bold;
   line-height: 28px;
   margin-bottom: 0;
 }
@@ -19,8 +20,8 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
-  color: #fe1e78;
-  font-size: 13px;
+  color: rgb(130, 20, 119);
+  font-size: 15px;
   font-weight: 100;
   line-height: 19px;
 }
@@ -29,14 +30,34 @@ li:first-letter {
 }
 
 .weather-app-wrapper {
-  max-width: 600px;
+  max-width: 800px;
   margin: 30px auto;
+  border-radius: 7px;
 }
 
 .weather-app {
-  padding: 20px;
-  border: 1px dotted #fe1e78;
+  padding: 40px;
+  height: 500px;
+  border-radius: 7px;
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/083/964/original/37bff9a2ca6b45409f816874ef5af77f.jpg?1685560915");
+}
+
+.form-control {
+  background-color: #fef7fe;
+}
+
+.search-btn {
+  background-color: rgb(130, 20, 119);
+  color: #fae1fa;
   border-radius: 5px;
+  padding: 5px;
+  font-size: 17px;
+  border: 1px solid;
+  border-color: rgb(130, 20, 119);
+  width: 60%;
+}
+.search-btn:hover {
+  opacity: 0.6;
 }
 
 .overview {
@@ -50,7 +71,7 @@ li:first-letter {
 }
 
 .weather-temperature strong {
-  color: #fe1e78;
+  color: rgb(130, 20, 119);
   font-size: 60px;
   line-height: 1;
   font-weight: 400;
@@ -63,26 +84,27 @@ li:first-letter {
 }
 
 .weather-temperature .active {
-  color: #fe1e78;
+  color: rgb(130, 20, 119);
   cursor: default;
 }
 .weather-temperature .active:hover {
   text-decoration: none;
 }
 .weather-forecast {
-  margin-top: 20px;
+  margin-top: 70px;
   text-align: center;
-  color: #fe1e78;
+  color: rgb(130, 20, 119) 8;
 }
 .weather-forecast-date {
-  font-size: 16px;
+  font-size: 20px;
   opacity: 0.6;
+  color: rgb(130, 20, 119);
 }
 
 .weather-forecast-temperature-min {
   opacity: 0.6;
 }
 .weather-forecast-temperature {
-  font-size: 13px;
-  color: #fe1e78;
+  font-size: 15px;
+  color: rgb(130, 20, 119);
 }
