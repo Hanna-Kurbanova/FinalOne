@@ -1,14 +1,15 @@
 body {
-  font-size: arial, sans-serif;
-  background-color: #f7e3f7;
+  background-color: #faecfa;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h1 {
   color: rgb(130, 20, 119);
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bold;
   line-height: 28px;
   margin-bottom: 0;
+  margin-top: auto;
 }
 
 ul {
@@ -19,11 +20,12 @@ ul {
 li {
   list-style: none;
   margin: 0;
+  margin-top: 3px;
   padding: 0;
-  color: rgb(130, 20, 119);
+  color: rgb(67, 5, 61);
   font-size: 15px;
   font-weight: 100;
-  line-height: 19px;
+  line-height: 20px;
 }
 li:first-letter {
   text-transform: capitalize;
@@ -39,18 +41,13 @@ li:first-letter {
   padding: 40px;
   height: 500px;
   border-radius: 7px;
-  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/084/389/original/5df274b30cd53.jpg?1685874999");
-}
-image {
-  opacity: 0.5;
+  background-image: url(image-kyiv.png);
 }
 
 .form-control {
   background-color: #fef7fe;
 }
-img {
-  opacity: 0.5;
-}
+
 .search-btn {
   background-color: rgb(130, 20, 119);
   color: #fae1fa;
@@ -84,30 +81,36 @@ img {
 
 .weather-temperature .units {
   position: relative;
-  font-size: 16px;
-  top: -34px;
+  font-size: 15px;
+  top: -30px;
 }
 
 .weather-temperature .active {
-  color: rgb(130, 20, 119);
-  cursor: default;
+  color: #f7e3f7;
 }
+
 .weather-temperature .active:hover {
   text-decoration: none;
 }
+
 .weather-forecast {
   margin-top: 70px;
   text-align: center;
-  color: rgb(130, 20, 119) 8;
+  color: #f7e3f7;
 }
+
 .weather-forecast-date {
+  font-size: 25px;
+  color: rgb(111, 18, 100);
+}
+
+.weather-forecast-temperature-max {
   font-size: 20px;
-  opacity: 0.6;
-  color: rgb(130, 20, 119);
 }
 
 .weather-forecast-temperature-min {
   opacity: 0.6;
+  font-size: 20px;
 }
 .weather-forecast-temperature {
   font-size: 15px;
