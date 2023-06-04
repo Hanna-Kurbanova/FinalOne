@@ -39,13 +39,18 @@ li:first-letter {
   padding: 40px;
   height: 500px;
   border-radius: 7px;
-  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/083/964/original/37bff9a2ca6b45409f816874ef5af77f.jpg?1685560915");
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/084/389/original/5df274b30cd53.jpg?1685874999");
+}
+image {
+  opacity: 0.5;
 }
 
 .form-control {
   background-color: #fef7fe;
 }
-
+img {
+  opacity: 0.5;
+}
 .search-btn {
   background-color: rgb(130, 20, 119);
   color: #fae1fa;

@@ -42,22 +42,20 @@ function displayForecast(response) {
         `
               <div class="col-2">
                 <div class="weather-forecast-date">${formatDay(
-                  forecastDay.dt
+                  forecastDay.time
                 )}</div>
                 <img
-                  src="http://openweathermap.org/img/wn/${
-                    forecastDay.weather[0].icon
-                  }@2x.png"
+                  src="${forecastDay.condition.icon_url}"
                   alt=""
                   width="42"
                 />
                 <div class="weather-forecast-temperature">
                   <span class="weather-forecast-temperature-max"> ${Math.round(
-                    forecastDay.temp.max
+                    forecastDay.temperature.maximum
                   )}° </span>
 
                   <span class="weather-forecast-temperature-min"> ${Math.round(
-                    forecastDay.temp.min
+                    forecastDay.temperature.minimum
                   )}° </span>
                 </div>
               </div>
@@ -73,7 +71,7 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   let apiKey = "8e897a0b4f39e7afb5t2d18f809912o8";
   //"c8735bb7e8e2f8d8a38c7501f3cd47d3";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon={lon}&lat={lat}&key={key}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}`;
   //`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
@@ -87,27 +85,24 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
-  celsiusTemperature = response.data.main.temp;
+  celsiusTemperature = response.data.temperature.current;
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  cityElement.innerHTML = response.data.name;
-  descriptionElement.innerHTML = response.data.weather[0].description;
-  humidityElement.innerHTML = response.data.main.humidity;
+  cityElement.innerHTML = response.data.city;
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  iconElement.setAttribute(
-    "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+  dateElement.innerHTML = formatDate(response.data.time * 1000);
+  iconElement.setAttribute("src", response.data.condition.icon_url);
+  iconElement.setAttribute("alt", response.data.condition.description);
 
-  getForecast(response.data.coord);
+  getForecast(response.data.coordinates);
 }
 
 function search(city) {
   let apiKey = "8e897a0b4f39e7afb5t2d18f809912o8";
   //"77df4efc31ae8b0acc6c7d09570dde67";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?q=${city}&appid=8e897a0b4f39e7afb5t2d18f809912o8&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   //`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=77df4efc31ae8b0acc6c7d09570dde67&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
@@ -121,4 +116,4 @@ function handleSubmit(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-search("Lisbon");
+search("Kyiv");
