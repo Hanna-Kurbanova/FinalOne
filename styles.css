@@ -1,10 +1,10 @@
 body {
-  background-color: #faecfa;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: linear-gradient(-225deg, #69eacb 0%, #eaccf8 48%, #6654f1 100%);
+  background-attachment: fixed;
 }
 
 h1 {
-  color: rgb(130, 20, 119);
+  color: rgb(119, 52, 150);
   font-size: 35px;
   font-weight: bold;
   line-height: 28px;
@@ -22,7 +22,7 @@ li {
   margin: 0;
   margin-top: 3px;
   padding: 0;
-  color: rgb(67, 5, 61);
+  color: rgb(119, 52, 150);
   font-size: 15px;
   font-weight: 100;
   line-height: 20px;
@@ -34,28 +34,34 @@ li:first-letter {
 .weather-app-wrapper {
   max-width: 800px;
   margin: 30px auto;
-  border-radius: 7px;
+  border-radius: 10px;
 }
 
 .weather-app {
   padding: 40px;
   height: 500px;
-  border-radius: 7px;
-  background-image: url(image-kyiv.png);
+  border-radius: 10px;
+  background: linear-gradient(
+    90.7deg,
+    rgb(255, 253, 218) 1.9%,
+    rgb(246, 210, 255) 39.3%,
+    rgb(152, 222, 254) 64.7%,
+    rgb(251, 255, 210) 100.8%
+  );
 }
 
 .form-control {
-  background-color: #fef7fe;
+  background-color: #fdfdfd;
 }
 
 .search-btn {
-  background-color: rgb(130, 20, 119);
+  background-color: rgb(119, 52, 150);
   color: #fae1fa;
   border-radius: 5px;
   padding: 5px;
   font-size: 17px;
   border: 1px solid;
-  border-color: rgb(130, 20, 119);
+  border-color: rgb(119, 52, 150);
   width: 60%;
 }
 .search-btn:hover {
@@ -73,7 +79,7 @@ li:first-letter {
 }
 
 .weather-temperature strong {
-  color: rgb(130, 20, 119);
+  color: rgb(119, 52, 150);
   font-size: 60px;
   line-height: 1;
   font-weight: 400;
@@ -101,7 +107,7 @@ li:first-letter {
 
 .weather-forecast-date {
   font-size: 25px;
-  color: rgb(111, 18, 100);
+  color: rgb(119, 52, 150);
 }
 
 .weather-forecast-temperature-max {
@@ -114,5 +120,5 @@ li:first-letter {
 }
 .weather-forecast-temperature {
   font-size: 15px;
-  color: rgb(130, 20, 119);
+  color: rgb(119, 52, 150);
 }
